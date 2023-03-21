@@ -1,19 +1,47 @@
-Как запустить проект:
-Клонировать репозиторий и перейти в него в командной строке:
+# Проект «API для Yatube»
+## Кратко о проекте
+Данный проект представляет собой API к Yatube. Позволяет делать запросы к эндпоинтам и получать сериализованные ответы.
 
-git clone https://github.com/suhartsev/api_final_yatube
-cd api_final_yatube
-Cоздать и активировать виртуальное окружение:
+## Как запустить проект
+### Клонировать репозиторий и перейти в него в командной строке:
 
-python -m venv env
-source env/bin/activate
-Установить зависимости из файла requirements.txt:
+```git clone git@github.com:suhartsev/api_final_yatube.git```
 
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-Выполнить миграции:
+```cd api_final_yatube```
+### Cоздать и активировать виртуальное окружение:
 
-python manage.py migrate
-Запустить проект:
+```python3 -m venv env```
+```source env/bin/activate```
+### Установить зависимости из файла requirements.txt:
 
-python manage.py runserver
+```python3 -m pip install --upgrade pip```
+```pip install -r requirements.txt```
+### Выполнить миграции:
+
+```python3 manage.py migrate```
+### Запустить проект:
+
+```python3 manage.py runserver```
+
+## Работа с API
+Когда вы запустите проект, по адресу http://127.0.0.1:8000/redoc/ будет доступна документация для API Yatube. В документации описано, как работает API.
+Документация в формате Redoc и содержит наглядные примеры запросов.
+### Примеры
+---
+***получение публикации по id***
+
+`GET /api/v1/posts/{id}/`
+
+Response
+
+>Статус 200 - удачное выполнение запроса
+```json
+{
+ "id": 0,   
+ "author": "string",  
+ "text": "string",  
+ "pub_date": "2023-03-21T11:25:10Z",  
+ "image": "string", 
+ "group": 0 
+}
+```

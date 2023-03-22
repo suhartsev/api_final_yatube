@@ -28,11 +28,6 @@ route_v1.register(
 
 urlpatterns = [
     path('v1/', include(route_v1.urls)),
-    path(
-        'v1/api-token-auth/',
-        views.obtain_auth_token,
-        name='api-token'
-    ),
     path('v1/', include('djoser.urls')),
     path('v1/', include('djoser.urls.jwt')),
 ]
